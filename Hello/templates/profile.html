@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #443636;
+            margin: 0;
+            padding: 0;
+        }
+        body h1{
+            justify-content: flex-start;
+            color:#f79b9b ;
+        }
+        .box{
+            background-image: url("https://lh6.googleusercontent.com/proxy/h50iTAu-OzhgZLgwvIdlSNbAThQa0nYpv4PVMhk2kcOUCjXTWzh2AmgXG9BKBt94ILCTF8ZAfg6O7HsntqOl-fnBVWib6BAE8XgcHzgTNQuea8jS9qGGEkxzcYTecmanqGyJ6zUJkcN-uYQ=w1200-h630-p-k-no-nu");
+            background-size: cover;
+            height: 700px;
+            h1{
+                color: black;
+            }
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: transparent;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            backdrop-filter: blur(10px);
+        }
+        .container img{
+            margin-top: 50px;
+            height: 400px;
+            border-radius: 10px;
+        }
+        .data{
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-info {
+            margin-bottom: 30px;
+        }
+        .profile-info h2 {
+            margin-bottom: 10px;
+        }
+        .profile-info p {
+            margin-bottom: 5px;
+        }
+        .profile-info p strong {
+            font-weight: bold;
+        }
+        .btn-container {
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>She Share</h1>
+    <div class="box">
+        <h1>My Profile</h1>
+        <div class="container">
+            
+
+            <img src="https://i.pinimg.com/originals/5d/21/3b/5d213b08ca32ac21694236cb4143bd30.jpg" alt="">
+            <div class="data">
+                <div class="profile-info">
+                    <h2>Personal Information</h2>
+                    <p><strong>Name:</strong> Ananya shinde </p>
+                    <p><strong>Email:</strong> Anany@gmail.com</p>
+                    <p><strong>Gender:</strong> Female</p>
+                    <p><strong>Age:</strong> 19</p>
+                    
+                </div>
+                <div class="profile-info">
+                    <h2>Contact Information</h2>
+                    <p><strong>Address:</strong> 45-bk house,Pune,India</p>
+                    <p><strong>Phone:</strong> +91801077699</p>
+                    
+                </div>
+                <div class="btn-container">
+                    <button class="btn">Edit Profile</button>
+                    <button class="btn">Change Password</button>
+                    <button class="btn">Logout</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

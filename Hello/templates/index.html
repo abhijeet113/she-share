@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color:#CCD3CA;
+    color: white;
+    /* display: flex; */
+}
+
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+
+header {
+    align-self: self-start;
+    background: #000;
+    color: #f79b9b;
+    padding: 20px 0;
+    width: 100%;
+    
+}
+
+header h1 {
+    margin-left: 20px;
+}
+
+header nav {
+    margin-right:30px;
+    
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 100px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: honeydew;
+}
+
+header nav ul li a:hover {
+    color: #666;
+}
+
+#hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#background-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* min-width: 90%;
+    min-height: 90%; */
+    width:fit-content;
+    height:fit-content;
+    z-index: -1;
+    
+}
+
+
+.content {
+    
+    position:absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
+    z-index: 1;
+    text-shadow: #322C2B;
+    
+}
+
+.content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: khaki;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background  0.3s ease;
+    /* transition: color  0.3s ease; */
+
+}
+
+.btn:hover {
+    background: #555;
+    color: #eee;
+    
+}
+
+#search {
+    background:#1c1b1b;
+    color: #f4f4f4;
+    padding: 50px 0;
+    width: 100%;
+    
+}
+
+
+#search input[type="text"],
+#search input[type="date"],
+#search button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#search button {
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#search button:hover {
+    background: #555;
+}
+
+#featured-listings {
+    padding: 50px 0;
+    width: 100%;
+    height: 650px;
+    margin: 20px;
+    overflow-y: scroll;
+    color: black;
+}
+.container2{
+    width: 100%;
+    margin: auto;
+    overflow-x:auto;
+    display:flex;
+    justify-content:space-between;
+    white-space:nowrap;
+    align-items: center;
+    flex-wrap:wrap;
+    position: relative;
+}
+.listing {
+    margin:30px 30px 30px 30px;
+    color: #1c1b1b;
+    height: 500px;
+    width: 400px;
+    border: solid 2px #000000;
+    border-radius: 5%;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease; /* Apply transition to all properties */
+    overflow:hidden; /*Ensure the overflow is hidden*/
+    position: relative;/* Position relative for child elements*/
+}
+
+.listing img {
+    height: 300px;
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+}
+.listing p{
+    margin: 1px 10px 1px 10px ;
+}
+
+.listing h3 {
+    margin: 10px 10px 10px 10px;
+    
+}
+
+.listing:hover {
+    height: 530px;
+    width: 410px;
+    border-color: rgb(217, 199, 39);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box-shadow for depth effect */
+    justify-content: space-evenly;
+}
+
+.listing:hover img {
+    transform: scale(1.05); /* Scale up image on hover for a subtle zoom effect */
+}
+
+.listing:hover h3 {
+    color: rgb(154, 154, 154); /* Change text color on hover */
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+#rooms{
+    margin-top: 50px;
+    height: 560px;
+    width: 100%;
+    background-color: rgb(42, 54, 54);
+    display:flex;
+    justify-content: space-evenly;
+}
+.roomblock{
+    height: 500px;
+    width: 45%;
+    border-radius: 5%;
+    border: 2px solid pink;
+    margin:20px 20px 20px 20px ;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    P:first-child{
+        color: palevioletred;
+        font-size: 30px;
+        margin: 10px;
+
+    }
+    
+    img{
+        max-width: 100%;
+        max-height: 70%;
+        border-radius: 10px;
+        margin: 10px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+
+    }
+    img:hover{
+        opacity: 1;
+    }
+}
+.con{
+
+    p{
+        color: #fefefe;
+        font-size: 14px;
+    }
+    a{
+        margin-bottom: 10px;
+    }
+}
+#Explore{
+    height: 500px;
+    background-color: #322C2B;
+}
+footer {
+    background: #333;
+    color: #fff;
+    height: 500px;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+.foot1 {
+        display: flex;
+        justify-content:space-evenly;
+        font-size: 17px;
+}
+.fdata {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: aliceblue;
+
+            a {
+                margin-top: 10px;
+                color: aliceblue;
+                font-size: 14px;
+                text-decoration: none;
+            }
+            a:hover{
+                color: rgb(176, 38, 38);
+            }
+        }
+.socialhandels{
+    align-self: flex-start;
+    a{
+        color: white;
+        margin: 5px;
+    }
+    a:hover{
+        color:rgb(176, 38, 38);
+    }
+    }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="navbar">
+                    <h1>SheShare</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#featured-listings">Explore</a></li>
+                        <li><a href="/stories">Stories</a></li>
+                        {% if not logid %} <!-- Check if logid list is empty -->
+                        <li><a href="/login">Sign In</a></li>
+                        {% else %}
+                        <li><a href="/profile">{{ logid|first }}</a></li> <!-- Display the first element of logid list -->
+                        {% endif %}
+                    </ul>
+                </nav>
+                </div>
+                
+            </div>
+        </header>
+    
+        <section id="hero">
+            <video id="background-video" autoplay muted loop>
+                <source src="{% static 'C:\artsy abhi\webdevlopment\mini project\airbnb for womens\Hello\static\video\herovideo.mp4' %}">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="content">
+                <h1>Welcome to She Share</h1>
+                <p> Where Every Woman's Journey Is Nurtured and Empowered, Offering Safe and Inspiring Spaces Tailored Exclusively for Women Travelers
+                </p>
+                <a href="#" class="btn">Explore Now</a>
+                
+            </div>
+        </section>
+    
+        <section id="search">
+            <div class="container">
+                <h2>Find Your Perfect Stay</h2>
+                <form  action="#" method="GET">
+                    <label for="">Enter Location</label>
+                    <input type="text" name="location" placeholder="Enter destination..." required>
+                    <label for="">From </label>
+                    <input type="date" name="checkin"  required>
+                    <label for="">To</label>
+                    <input type="date" name="checkout"  required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+        <section id="rooms">
+            <div class="roomblock">
+                <p>SHARE YOUR ROOM </p>
+                <img src="https://www.census.gov/library/spotlights/2022-economic-census-social-media-toolkit/assets/04Nww3wmYH/meet-helen-2000x1334.jpg" alt="img not found" >
+                <div class="con">
+                    <h3></h3>
+                    <p>Are you looking to share your room or property with others? WomenStay is the perfect platform for you. List your space today and start earning!</p>
+                    <a href="/shareproperty" class="btn">List Your Space</a>
+                </div>
+            </div>
+            <div class="roomblock">
+                <P>RENT YOUR ROOM</P>
+                <img src="https://www.comfortzoneproducts.com/cdn/shop/articles/Getting_Dorm_Room_Ready_1024x1024.jpg?v=1629983855" alt="img not found">
+                <div class="con">
+                    <h3></h3>
+                    <p>Looking for a cozy place to stay? Check out this room available for rent. Fully furnished and conveniently located, it's the perfect option for your next trip.</p>
+                    <a href="/rentproperty" class="btn">Book Your Stay</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="featured-listings">
+            <h2>Featured Listings</h2>
+            <div class="container2">
+                
+                <!-- Featured listings can be dynamically populated from the database -->
+                <div class="listing">
+                    <img src="https://i.ytimg.com/vi/i7Wp1UNaffU/maxresdefault.jpg" alt="Listing 1">
+                    <h3>Cozy Apartment in Paris</h3>
+                    <p>$100/night</p>
+                    <p>Description: This cozy apartment is located in the heart of Paris, offering a comfortable stay for travelers. Enjoy the bustling city life and explore the iconic landmarks nearby.</p>
+                    <p>Location: Paris, France</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                <div class="listing">
+                    <img src="https://i.pinimg.com/originals/cd/a2/ab/cda2ab771d01b5e6f09266628874cc69.jpg" alt="Listing 2">
+                    <h3>Beach House in Bali</h3>
+                    <p>$80/night</p>
+                    <p>Description: Experience paradise in this beautiful beach house in Bali. Relax on pristine beaches, indulge in delicious local cuisine, and immerse yourself in Balinese culture.</p>
+                    <p>Location: Bali, Indonesia</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                <div class="listing">
+                    <img src="https://www.ourescapeclause.com/wp-content/uploads/2022/05/shutterstock_1384001882-scaled.jpg" alt="Listing 3">
+                    <h3>Beautiful Villa in Tuscany</h3>
+                    <p>$200/night</p>
+                    <p>Description: This beautiful villa offers a luxurious stay in the scenic region of Tuscany. Surrounded by vineyards and rolling hills, it's the perfect retreat for wine enthusiasts and nature lovers.</p>
+                    <p>Location: Tuscany, Italy</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                <div class="listing">
+                    <img src="https://www.jamesedition.com/stories/wp-content/uploads/2020/10/11.jpg" alt="Listing 4">
+                    <h3>Luxury Penthouse in New York City</h3>
+                    <p>$500/night</p>
+                    <p>Description: Indulge in luxury with this stunning penthouse in the heart of New York City. Enjoy breathtaking views of the skyline and experience the vibrant energy of the city that never sleeps.</p>
+                    <p>Location: New York City, USA</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                <div class="listing">
+                    <img src="https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/12/OG-Picture-for-greece-cottages.jpg" alt="Listing 5">
+                    <h3>Seaside Cottage in Greece</h3>
+                    <p>$150/night</p>
+                    <p>Description: Escape to the picturesque shores of Greece with this charming seaside cottage. Relax by the crystal-clear waters, soak up the Mediterranean sun, and savor the authentic Greek cuisine.</p>
+                    <p>Location: Greece</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                <div class="listing">
+                    <img src="https://i.pinimg.com/originals/36/bf/f1/36bff1733396b6a985121a0f83524fd2.jpg" alt="Listing 6">
+                    <h3>Mountain Chalet in Switzerland</h3>
+                    <p>$300/night</p>
+                    <p>Description: Experience the beauty of the Swiss Alps with this charming mountain chalet. Surrounded by breathtaking scenery, it offers a cozy retreat for outdoor enthusiasts and nature lovers.</p>
+                    <p>Location: Switzerland</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                <div class="listing">
+                    <img src="https://i.pinimg.com/originals/4e/b4/8b/4eb48ba310f6ce188369c6803cc5dce5.jpg" alt="Listing 7">
+                    <h3>Lakeside Cabin Retreat in Canada</h3>
+                    <p>$250/night</p>
+                    <p>Description: Enjoy a peaceful lakeside retreat in the stunning wilderness of Canada. Disconnect from the hustle and bustle of city life and reconnect with nature in this cozy cabin hideaway.</p>
+                    <p>Location: Canada</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                <div class="listing">
+                    <img src="https://i.pinimg.com/originals/1f/00/cd/1f00cd6a3d6baacd19f4d7db1c6e1216.jpg" alt="Listing 8">
+                    <h3>Secluded Forest Cabin in Norway</h3>
+                    <p>$280/night</p>
+                    <p>Description: Escape to the tranquil beauty of the Norwegian forest with this secluded cabin retreat. Surrounded by towering trees and pristine wilderness, it offers a peaceful getaway for nature lovers.</p>
+                    <p>Location: Norway</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                <div class="listing">
+                    <img src="https://i.ytimg.com/vi/i7Wp1UNaffU/maxresdefault.jpg" alt="Listing 1">
+                    <h3>Cozy Apartment in Paris</h3>
+                    <p>$100/night</p>
+                    <p>Description: This cozy apartment is located in the heart of Paris, offering a comfortable stay for travelers. Enjoy the bustling city life and explore the iconic landmarks nearby.</p>
+                    <p>Location: Paris, France</p>
+                    <a href="#" class="btn">Check</a>
+                </div>
+                
+                
+                
+                
+                
+                <!-- More listings can be added here -->
+            </div>
+            
+        </section>
+    
+        <footer>
+            <div class="foot1">
+                <div class="fdata">
+                    SHE SHARE 
+                    <a href="">About us</a>
+                    <a href="">Career</a>
+                    <a href="">Contact us</a>
+                    <a href="">Investors</a>
+                    <a href="">Newsroom</a>
+
+                    <a href=""></a>
+                </div>
+                <div class="fdata">
+                    SUPPORT
+                    <a href="">FAQs</a>
+                    <a href="">Help center</a>
+                    <a href="">Anti-discrimination</a>
+                    <a href="">Disability support</a>
+                    <a href="">Repost neighbourhood concern</a>
+                    <a href="">Cancellation policy</a>
+                </div>
+                <div class="fdata">
+                    BECOME A HOST
+                    <a href="">She share your home</a>
+                    <a href="">She share for hosts</a>
+                    <a href="">Community forum</a>
+                    <a href="">Hosting resource</a>
+                    <a href="">Hosting responsibllity</a>
+                    <a href="">Share a room</a>
+                    <a href="">Pets</a>
+                </div>
+                <div class="fdata">
+                    TERM & POLICY
+                    <a href="">Term & Conditon</a>
+                    <a href="">Privacy Policy</a>
+                </div>
+                
+            </div><br>
+            <div class="socialhandels">
+                follow us ..
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-threads"></i></a>
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+            </div>
+
+<br>
+<hr>
+<br>
+<br>
+            <div class="container">
+                <p>&copy; 2024 SheShare. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="" async defer></script>
+    </body>
+</html>

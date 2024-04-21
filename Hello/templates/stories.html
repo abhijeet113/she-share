@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            background:#B5C0D0;
+        }
+        
+        form{
+            height:200px;
+            width: 200px;
+            display: flex;
+            flex-direction: column; 
+            border: 2px solid black;
+            border-radius: 10px;
+            transition: all 1s ease-in-out;
+            text-align: center;
+        }
+        form input{
+            margin: auto;
+            width: 90%;
+            height: 20px;
+        }
+        form textarea{
+            margin: auto;
+            width: 90%;
+        }
+        form label{
+            margin:auto;
+        }
+        form:hover{
+            height: 400px;
+            width: 400px;
+            border: 2px solid rgb(182, 172, 82);
+            #story{
+                height: 200px;
+                font-size: 20px;
+            }
+        }
+        header {
+            align-self: self-start;
+            background: #000;
+            color: #f79b9b;
+            padding: 20px 0;
+            width: 100%;
+            
+        }
+        
+        .box {
+            background-color: #B5C0D0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-container {
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            border: 2px solid khaki;
+            border-radius: 10px;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+
+        }
+
+        .story-container img {
+            height: auto;
+            width: 400px;
+            border-radius: 10px;
+            margin: 10px 10px 10px 10px;
+            opacity: 0.7;
+            transition: all 1s ease-in-out;
+        }
+        .story-container img:hover {
+            opacity: 1;
+        }
+        .data {
+            margin: 20px 20px 20px 20px;
+            text-align: end;
+            font-size: 23px;
+        }
+
+        .data p {
+            margin: 20px 20px 20px 20px;
+            font-size: 40px;
+            color: black;
+        }
+        .data a{
+            margin: 2px 2px 2px 2px;
+            color:black;
+        }
+        .data a:hover{
+            margin: 4px 4px 4px 4px;
+            color:rgb(235, 22, 22);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>She Share Stories</h1>
+    </header>
+    <div class="share-form">
+        <h2>Share Your Story</h2>
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <label for="name">Your Name:</label>
+            <input type="text" name="name" id="name" required><br>
+            <label for="story">Your Story:</label>
+            <textarea name="story" id="story" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="box">
+        <div class="story-container">
+            <img src="https://th.bing.com/th/id/R.6c43380b5c76cbd5a7d8f2083824e6be?rik=Eptcqy%2bvWc5PiQ&riu=http%3a%2f%2f4.bp.blogspot.com%2f-zoa1aG3sI-U%2fUhhnkmNuExI%2fAAAAAAAAEt8%2fihBbb8ZfcG0%2fs1600%2fa%2b(20).jpg&ehk=ymUFDWUIOQVcqg2p4OR91%2bK598V05NWmtQ%2fVsdPAWSU%3d&risl=&pid=ImgRaw&r=0"
+                alt="">
+            <div class="data">
+                <p>Jiya Shaha</p>
+                Setting foot on the path of She Share, I unearthed a realm brimming with tailored adventures designed
+                for women like myself. From idyllic hideaways in Santorini to the bustling streets of New York City,
+                each destination narrated tales of empowerment and liberation, echoing through every corner of my
+                travels. Amidst the enchanting tapestry of landscapes and diverse cultures, I discovered solace in the
+                company of fellow female explorers, weaving bonds that transcended borders and language barriers.
+                Through every stay, She Share not only provided sanctuary but also served as a conduit for
+                self-discovery and the cultivation of genuine connections. The memories etched in my heart serve as a
+                testament to the profound impact of exploration and the enduring support within our vibrant community.
+                With She Share, my journey evolved into a lifestyle characterized by fearless exploration and endless
+                possibilities. <br>
+
+                <a href=""><i class="bi bi-heart-fill"></i></a>
+                <a href=""><i class="bi bi-chat"></i></a>
+                <a href=""><i class="bi bi-chat-left-dots"></i></a>
+                <a href=""><i class="bi bi-share-fill"></i></a>
+
+            </div>
+        </div>
+        <div class="story-container">
+            <img src="https://images.hdqwalls.com/download/gustavo-terzaghi-model-1600x1200.jpg" alt="">
+            <div class="data">
+                <p>Anjali Singh</p>
+                Embarking on a journey through She Share, I discovered a world of unparalleled adventures tailored for
+                women like me. From serene retreats in Bali to bustling streets of Paris, each destination whispered
+                tales of empowerment and liberation. As I navigated through enchanting landscapes and vibrant cultures,
+                I found solace in the camaraderie of fellow female travelers, forging bonds that transcended borders.
+                With every stay, She Share not only provided a safe haven but also became a conduit for self-discovery
+                and newfound friendships. The memories etched in my heart are a testament to the transformative power of
+                exploration and the unwavering support of a community united by wanderlust. Through She Share, I not
+                only embarked on a journey of discovery but also embraced a lifestyle of fearless exploration and
+                boundless possibilities. <br>
+
+                <a href=""><i class="bi bi-heart-fill"></i></a>
+                <a href=""><i class="bi bi-chat"></i></a>
+                <a href=""><i class="bi bi-chat-left-dots"></i></a>
+                <a href=""><i class="bi bi-share-fill"></i></a>
+            </div>
+        </div>
+
+        <div class="story-container">
+            <img src="https://www.morningpic.com/wp-content/uploads/2023/03/Nicknames-For-Margaret-3.jpg" alt="">
+            <div class="data">
+                <p>Shreya Patel</p>
+                Setting out on an expedition with She Share, I delved into a realm tailored to the aspirations of women
+                like myself, craving unique experiences and meaningful connections. From the sun-kissed beaches of
+                Maldives to the historic charm of Kyoto, each locale narrated tales of empowerment and independence.
+                Navigating through diverse landscapes and immersive cultures, I found companionship in the sisterhood of
+                fellow female explorers, fostering bonds that transcended geographical boundaries. At every stop, She
+                Share offered not just accommodation but a sanctuary for self-exploration and genuine camaraderie. The
+                memories woven into my journey serve as a testament to the profound impact of travel and the solidarity
+                of a community driven by wanderlust. Through She Share, I embarked not only on a physical voyage but
+                also on a transformative inner odyssey, embracing a life defined by curiosity and <br>
+                <a href=""><i class="bi bi-heart-fill"></i></a>
+                <a href=""><i class="bi bi-chat"></i></a>
+                <a href=""><i class="bi bi-chat-left-dots"></i></a>
+                <a href=""><i class="bi bi-share-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="" async defer></script>
+</body>
+
+</html>

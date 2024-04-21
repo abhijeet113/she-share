@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Your Room</title>
+    <style>
+        /* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(38, 33, 33);
+    background-size: cover;
+    
+}
+.box{
+    background:url("https://t3.ftcdn.net/jpg/01/59/65/38/240_F_159653821_UFANkt1wVJrqHWnTSycQe3IuXj9cdnxx.jpg");
+    background-size: cover;
+    height: 700px;
+    /* opacity: 0.6; */
+    justify-items: center;
+}
+
+header{
+    /* background-color: black; */
+    margin: 0px 0px 20px 0px;
+    justify-content: center;
+    display:flexbox;
+    
+}
+
+header h1 {
+    /* background: black; */
+    margin:10px 10px 10px 10px;
+    color:#f79b9b;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    position: relative;
+    max-width: 1000px;
+    /* margin-top: 20px; */
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    border: 3px solid rgb(230, 214, 109);
+    border-radius: 10px;
+    background-color: rgba(76, 65, 65, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Blurred backdrop */
+    transition:all 2s ease-in-out ;
+}
+.container:hover{
+    background-color:rgb(49, 48, 48);
+}
+.data {
+    display: flex;
+    flex-direction: column;
+    color:rgb(255, 255, 255);
+    margin: 20px 20px 20px 20px;
+    font-size: 20px;
+}
+
+.container img {
+    height: 300px;
+    border-radius: 10px;
+    opacity: .7;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: rgba(215, 245, 240, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(0px); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+form:hover{
+    background-color: rgba(182, 238, 229, 0.53);
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    display:block;
+    width: 40%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>She Share</h1>
+    </header>
+    <div class="box"><br><br>
+        <div class="container">
+        
+            <form action="/tripdetail" method="POST">
+                <label for="">Name </label>
+                <input type="text" name="Name" placeholder="enter your name" required>
+                <label for="">Contact </label>
+                <input type="text" name="Contact" placeholder="enter contact number" required>
+                <label for="">Description of trip </label>
+                <textarea name="description" placeholder="Description" required></textarea>
+                <label for="">Location</label>
+                <input type="text" name="location" placeholder="Location" required>
+                <label for="">budget</label>
+                <input type="number" name="price" placeholder="Price per night" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="data">
+                <p>Welcome to the Rent Your Room page. Use this form to submit details about your room that you want to rent out. Please provide accurate and descriptive information to attract potential renters.</p>
+                <p>Fields marked with <span style="color: red;">*</span> are required.</p>
+                <p>After submitting the form, your room listing will be available for viewing by potential renters.</p>
+            </div>
+        </div>
+    
+    </div>
+    
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+</body>
+</html>
